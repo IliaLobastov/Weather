@@ -1,115 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dark Weather</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="header">
-            <div id="logo"><span class="dark">Dark</span> <span class="weather">Weather</span></div>
-            <div id="head-menu">
-                <div>Home</div>
-                <div>Download App</div>
-                <div>Contact us</div>
-            </div>
-            <div id="signUp">Sign Up</div>
+      <div class="header">
+        <div id="logo"><span class="dark">Dark</span> <span class="weather">Weather</span></div>
+        <div id="head-menu">
+          <div>Home</div>
+          <div>Download App</div>
+          <div>Contact us</div>
         </div>
+        <div id="signUp">Sign Up</div>
+      </div>
     </header>
 
     <main class="main">
-        <section class="section-desc">
-            <div class="description">
-                <p>
-                    Seeing the weather of the whole world <br>
-                    with <strong class="highlight">Dark Weather!</strong>
-                </p>
-            </div>
-        </section>
-        
-        <section class="section-search">
-            <div class="search-filters">
-                <input type="text" name="city-input" placeholder="Search Here">
-                
-                <div class="filters-container">
-                    <h2>Filters</h2>
-                    <div class="filters">
-                        <select>
-                            <option>Coldest</option>
-                            <option>Hottest</option>
-                        </select>
-                        
-                        <select>
-                            <option>10°C - 20°C</option>
-                            <option>20°C - 30°C</option>
-                            <option>30°C+</option>
-                        </select>
-                        
-                        <select>
-                            <option>Rainy</option>
-                            <option>Sunny</option>
-                            <option>Cloudy</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="section-desc">
+        <div class="description">
+          <p>
+            Seeing the weather of the whole world <br />
+            with <strong class="highlight">Dark Weather!</strong>
+          </p>
+        </div>
+      </section>
 
-        <section class="section-city-card">
-            <div class="city-card-container">
-                <div class="city-card">
-                    <div class="weather-icon">
-                        <img src="icons/cloudy.png" alt="Cloudy">
-                    </div>
-                    <div class="city-header">
-                        <h2 class="city-name">Tehran</h2>
-                        <div class="temperature">35°C</div>
-                    </div>
-                    <div class="details">
-                        <p>Wind speed: <span class="wind-speed">11</span> km/h</p>
-                        <p class="time">Tuesday : 19:52</p>
-                        <p>Cloudy</p>
-                    </div>
-                </div>
+      <section class="section-search">
+        <div class="search-filters">
+          <form id="search-form">
+            <input type="text" id="city-search-input" name="city-input" placeholder="Search Here" />
+            <button id="serch-button">Search</button>
+          </form>
 
-                <div class="city-card">
-                    <div class="weather-icon">
-                        <img src="icons/sun.png" alt="Sunny">
-                    </div>
-                    <div class="city-header">
-                        <h2 class="city-name">Qom</h2>
-                        <div class="temperature">41°C</div>
-                    </div>
-                    <div class="details">
-                        <p>Wind speed: <span class="wind-speed">5</span> km/h</p>
-                        <p class="time">Tuesday : 19:52</p>
-                        <span>Sunny</span>
-                    </div>
-                </div>
+          <div class="filters-container">
+            <h2>Filters</h2>
+            <div class="filters">
+              <select id="filter-temp">
+                <option value="">Temperature</option>
+                <option value="cold">Coldest</option>
+                <option value="hot">Hottest</option>
+              </select>
 
-                <div class="city-card">
-                    <div class="weather-icon">
-                        <img src="icons/rainy.png" alt="Rainy">
-                    </div>
-                    <div class="city-header">
-                        <h2 class="city-name">Gilan</h2>
-                        <div class="temperature">23°C</div>
-                    </div>
-                    <div class="details">
-                        <p>Wind speed: <span class="wind-speed">23</span> km/h</p>
-                        <p class="time">Tuesday : 19:52</p>
-                        <span>Rainy</span>
-                    </div>
-                </div>
+              <select id="filter-range">
+                <option value="">Range</option>
+                <option value="10-20">10°C - 20°C</option>
+                <option value="20-30">20°C - 30°C</option>
+                <option value="30+">30°C+</option>
+              </select>
+
+              <select id="filter-weather">
+                <option value="">Weather</option>
+                <option value="Rain">Rainy</option>
+                <option value="Clear">Sunny</option>
+                <option value="Clouds">Cloudy</option>
+              </select>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-city-card">
+        <div id="city-card-container" class="city-card-container"></div>
+      </section>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

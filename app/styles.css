@@ -1,237 +1,238 @@
-/* Базовый сброс стилей для consistency across browsers */
+/* Сброс стилей */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: white;
-    background-color: #1b2633;
-    padding: 0 20px 50px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: white;
+  background-color: #1b2633;
+  padding: 0 20px 50px;
+  transition: background 1s ease;
 }
 
-/* Стили для шапки */
+/* Шапка */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    background-color: transparent;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  color: white;
 }
 
 #logo {
-    font-size: 28px;
-    font-weight: 700;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 #logo .dark {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #logo .weather {
-    color: #4d7d98;
+  color: #4d7d98;
 }
 
 #head-menu {
-    display: flex;
-    gap: 2rem;
-    font-size: 18px;
-    font-weight: 400;
-    color: #ffffff;
-    cursor: pointer;
+  display: flex;
+  gap: 2rem;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 #head-menu div:hover {
-    color: #4d7d98;
+  color: #4d7d98;
 }
 
 #signUp {
-    padding: 0.6rem 1.5rem;
-    background: linear-gradient(135deg, #4d7d98, #5c93b1);
-    border-radius: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #4d7d98, #5c93b1);
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 #signUp:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
-/* === DESCRIPTION === */
+/* Description */
 .section-desc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  text-align: center;
 }
 
 .description p {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: #ffffff;
-    max-width: 800px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 800px;
 }
 
 .description .highlight {
-    color: #4d7d98;
+  color: #4d7d98;
 }
 
-/* Все для поиска */
+/* Поиск и фильтры */
 .section-search {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .search-filters {
-    display: flex;
-    gap: 60px;
-    align-items: center;
+  display: flex;
+  gap: 60px;
+  align-items: center;
 }
 
 .search-filters input {
-    background-color: #243241;
-    border: none;
-    border-radius: 12px;
-    padding: 20px;
-    color: white;
-    font-size: 18px;
-    outline: none;
-    width: 358px;
-    height: 85px;
+  background-color: #243241;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  outline: none;
+  width: 358px;
+  height: 85px;
 }
 
 .search-filters input::placeholder {
-    color: #aaa;
+  color: #aaa;
 }
-
+#search-form button {
+  margin-left: 10px;
+  padding: 20px;
+  background: linear-gradient(135deg, #4d7d98, #5c93b1);
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#search-form button:hover {
+  opacity: 0.85;
+}
 .filters-container {
-    background-color: #243241;
-    border: 1px solid #3b4a5a;
-    border-radius: 12px;
-    padding: 20px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 750px;
+  background-color: #243241;
+  border: 1px solid #3b4a5a;
+  border-radius: 12px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 750px;
 }
 
 .filters-container h2 {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .filters {
-    display: flex;
-    gap: 20px;
-    width: 100%;
+  display: flex;
+  gap: 20px;
+  width: 100%;
 }
 
 .filters select {
-    flex: 1;
-    background-color: #1b2633;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 12px;
-    padding: 12px 20px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    outline: none;
-    appearance: none;
-    width: 154px;
-    height: 75px;
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='white' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 12px;
-    padding-right: 35px;
+  flex: 1;
+  background-color: #1b2633;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 12px 20px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  height: 75px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='white' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  padding-right: 35px;
 }
 
-/* карточки городов */
+/* Карточки */
 .section-city-card {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
 .city-card-container {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .city-card {
-    position: relative;
-    background-color: #243241;
-    border-radius: 20px;
-    padding: 60px 20px 20px;
-    width: 327px;
-    height: 486px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
+  position: relative;
+  background-color: #243241;
+  border-radius: 20px;
+  padding: 60px 20px 20px;
+  width: 327px;
+  height: 486px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.city-card:hover {
-    transform: translateY(-5px);
+.city-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .city-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .city-name {
-    font-size: 22px;
-    font-weight: 600;
-    width: 192px;
-    height: 65px;
-    display: flex;
-    align-items: center;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .temperature {
-    font-size: 22px;
-    font-weight: 500;
-    color: #4d7d98;
-    display: flex;
-    align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+  color: #4d7d98;
 }
 
 .weather-icon {
-    position: absolute;
-    top: -70px;
-    right: -30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: absolute;
+  top: -70px;
+  right: -30px;
 }
 
 .weather-icon img {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .details {
-    font-size: 14px;
-    text-align: center;
-    color: #aaa;
-    width: 100%;
-}
-
-.details p {
-    margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #aaa;
 }
