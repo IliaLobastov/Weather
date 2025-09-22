@@ -3,6 +3,18 @@ const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('city-search-input');
 const cityContainer = document.getElementById('city-card-container');
 
+// маппинг иконок
+const weatherIcons = {
+  Clear: 'icons/clear.png',
+  Clouds: 'icons/cloudy.png',
+  Rain: 'icons/rainy.png',
+  Drizzle: 'icons/drizzle.png',
+  Snow: 'icons/snow.png',
+  Thunderstorm: 'icons/storm.png',
+  Mist: 'icons/mist.png',
+  Fog: 'icons/mist.png',
+};
+
 function saveCityToHistory(city) {
   let history = JSON.parse(localStorage.getItem('weatherHistory')) || [];
   if (!history.includes(city)) {
@@ -20,31 +32,13 @@ function loadHistory() {
 }
 
 function setBackground(weather) {
-  let bg;
-  switch (weather) {
-    case 'Clear':
-      bg = 'linear-gradient(to right, #56ccf2, #2f80ed)';
-      break;
-    case 'Clouds':
-      bg = 'linear-gradient(to right, #757f9a, #d7dde8)';
-      break;
-    case 'Rain':
-    case 'Drizzle':
-      bg = 'linear-gradient(to right, #314755, #26a0da)';
-      break;
-    case 'Snow':
-      bg = 'linear-gradient(to right, #83a4d4, #b6fbff)';
-      break;
-    case 'Thunderstorm':
-      bg = 'linear-gradient(to right, #232526, #414345)';
-      break;
-    case 'Mist':
-      bg = 'linear-gradient(to right, #606c88, #3f4c6b)';
-      break;
-    default:
-      bg = '#1b2633';
-  }
-  document.body.style.background = bg;
+  document.body.className = ''; // сброс
+  if (weather === 'Clear') document.body.classList.add('bg-sunny');
+  else if (weather === 'Clouds') document.body.classList.add('bg-cloudy');
+  else if (weather === 'Rain' || weather === 'Drizzle') document.body.classList.add('bg-rainy');
+  else if (weather === 'Snow') document.body.classList.add('bg-snowy');
+  else if (weather === 'Thunderstorm') document.body.classList.add('bg-stormy');
+  else document.body.classList.add('bg-default');
 }
 
 async function getCoordinates(cityName) {
@@ -84,13 +78,15 @@ async function getWeatherByCityName(cityName) {
 }
 
 function addCardCity({ cityName, temp, weather, wind, pressure, humidity }) {
+  const iconSrc = weatherIcons[weather] || 'icons/cloudy.png'; // fallback
+
   const card = document.createElement('div');
   card.classList.add('city-card');
   card.innerHTML = `
     <div class="weather-icon">
-      <img src="icons/${weather.toLowerCase()}.png" alt="${weather}" />
+      <img src="${iconSrc}" alt="${weather}" />
     </div>
-    <div class="city-header">
+    <div class="city-info">
       <h2 class="city-name">${cityName}</h2>
       <div class="temperature">${temp}°C</div>
     </div>
@@ -98,10 +94,12 @@ function addCardCity({ cityName, temp, weather, wind, pressure, humidity }) {
       <p>Wind: ${wind} km/h</p>
       <p>Humidity: ${humidity}%</p>
       <p>Pressure: ${pressure} hPa</p>
-      <p>${weather}</p>
+      <p class="weather-condition">${weather}</p>
     </div>
   `;
   cityContainer.prepend(card);
+
+  // анимация появления
   requestAnimationFrame(() => card.classList.add('show'));
 }
 
@@ -113,5 +111,5 @@ searchForm.addEventListener('submit', (e) => {
   searchInput.value = '';
 });
 
-// Загружаем историю при старте
+// загрузка истории при старте
 loadHistory();

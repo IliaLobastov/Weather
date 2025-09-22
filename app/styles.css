@@ -1,238 +1,325 @@
 /* Сброс стилей */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: white;
-  background-color: #1b2633;
-  padding: 0 20px 50px;
-  transition: background 1s ease;
-}
-
-/* Шапка */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 3rem;
-  color: white;
-}
-
-#logo {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-#logo .dark {
-  color: #ffffff;
-}
-
-#logo .weather {
-  color: #4d7d98;
-}
-
-#head-menu {
-  display: flex;
-  gap: 2rem;
-  font-size: 18px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-#head-menu div:hover {
-  color: #4d7d98;
-}
-
-#signUp {
-  padding: 0.6rem 1.5rem;
-  background: linear-gradient(135deg, #4d7d98, #5c93b1);
-  border-radius: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-#signUp:hover {
-  opacity: 0.85;
-}
-
-/* Description */
-.section-desc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 80px;
-  text-align: center;
-}
-
-.description p {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.6;
-  color: #ffffff;
-  max-width: 800px;
-}
-
-.description .highlight {
-  color: #4d7d98;
-}
-
-/* Поиск и фильтры */
-.section-search {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.search-filters {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-
-.search-filters input {
-  background-color: #243241;
-  border: none;
-  border-radius: 12px;
-  padding: 20px;
-  color: white;
-  font-size: 18px;
-  outline: none;
-  width: 358px;
-  height: 85px;
-}
-
-.search-filters input::placeholder {
-  color: #aaa;
-}
-#search-form button {
-  margin-left: 10px;
-  padding: 20px;
-  background: linear-gradient(135deg, #4d7d98, #5c93b1);
-  border: none;
-  border-radius: 12px;
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-#search-form button:hover {
-  opacity: 0.85;
-}
-.filters-container {
-  background-color: #243241;
-  border: 1px solid #3b4a5a;
-  border-radius: 12px;
-  padding: 20px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 750px;
-}
-
-.filters-container h2 {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.filters {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-}
-
-.filters select {
-  flex: 1;
-  background-color: #1b2633;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 12px;
-  padding: 12px 20px;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  outline: none;
-  appearance: none;
-  height: 75px;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='white' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 12px;
-  padding-right: 35px;
-}
-
-/* Карточки */
-.section-city-card {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.city-card-container {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.city-card {
-  position: relative;
-  background-color: #243241;
-  border-radius: 20px;
-  padding: 60px 20px 20px;
-  width: 327px;
-  height: 486px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 35px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, opacity 0.5s ease;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.city-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.city-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.city-name {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.temperature {
-  font-size: 22px;
-  font-weight: 500;
-  color: #4d7d98;
-}
-
-.weather-icon {
-  position: absolute;
-  top: -70px;
-  right: -30px;
-}
-
-.weather-icon img {
-  width: 200px;
-  height: 200px;
-}
-
-.details {
-  font-size: 14px;
-  text-align: center;
-  color: #aaa;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: white;
+    background-color: #1b2633;
+    padding: 0 20px 50px;
+    transition: background 1s ease;
+  }
+  
+  /* Шапка */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    color: white;
+  }
+  
+  #logo {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  #logo .dark {
+    color: #ffffff;
+  }
+  
+  #logo .weather {
+    color: #4d7d98;
+  }
+  
+  #head-menu {
+    display: flex;
+    gap: 2rem;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  
+  #head-menu div:hover {
+    color: #4d7d98;
+  }
+  
+  #signUp {
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(135deg, #4d7d98, #5c93b1);
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  #signUp:hover {
+    opacity: 0.85;
+  }
+  
+  /* Description */
+  .section-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    text-align: center;
+  }
+  
+  .description p {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 800px;
+  }
+  
+  .description .highlight {
+    color: #4d7d98;
+  }
+  
+  /* Поиск и фильтры */
+  .section-search {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .search-filters {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  .search-filters input {
+    background-color: #243241;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    width: 358px;
+    height: 85px;
+  }
+  
+  .search-filters input::placeholder {
+    color: #aaa;
+  }
+  #search-form button {
+    margin-left: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, #4d7d98, #5c93b1);
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #search-form button:hover {
+    opacity: 0.85;
+  }
+  .filters-container {
+    background-color: #243241;
+    border: 1px solid #3b4a5a;
+    border-radius: 12px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 750px;
+  }
+  
+  .filters-container h2 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .filters select {
+    flex: 1;
+    background-color: #1b2633;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    height: 75px;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='white' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 35px;
+  }
+  
+  /* Карточки */
+  .section-city-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .city-card-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Обновленные стили для карточек погоды */
+  .city-card {
+    position: relative;
+    background-color: #243241;
+    border-radius: 20px;
+    padding: 30px 20px 20px;
+    width: 327px;
+    min-height: 350px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .city-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .weather-icon {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: -70px;
+    margin-bottom: -30px;
+  }
+  
+  .weather-icon img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .city-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .city-name {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .temperature {
+    font-size: 32px;
+    font-weight: 600;
+    color: #4d7d98;
+  }
+  
+  .details {
+    font-size: 16px;
+    text-align: center;
+    color: #aaa;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .details p {
+    margin: 8px 0;
+  }
+  
+  .weather-condition {
+    font-weight: 600;
+    color: #fff;
+    margin-top: 15px !important;
+    font-size: 18px;
+  }
+  
+  /* fons */
+  
+  .bg-sunny {
+      background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    }
+    
+    .bg-cloudy {
+      background: linear-gradient(to top, #757f9a 0%, #d7dde8 100%);
+    }
+    
+    .bg-rainy {
+      background: linear-gradient(to top, #667db6 0%, #0082c8 50%, #667db6 100%);
+    }
+    
+    .bg-snowy {
+      background: linear-gradient(to top, #e0eafc 0%, #cfdef3 100%);
+    }
+    
+    .bg-stormy {
+      background: linear-gradient(to top, #232526 0%, #414345 100%);
+    }
+    
+    .bg-default {
+      background: linear-gradient(to top, #283e51 0%, #485563 100%);
+    }
+  
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 1200px) {
+    .search-filters {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .filters-container {
+      width: 100%;
+      max-width: 500px;
+    }
+    
+    #search-form {
+      display: flex;
+      width: 100%;
+    }
+    
+    #city-search-input {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      gap: 15px;
+      padding: 1rem;
+    }
+    
+    #head-menu {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .description p {
+      font-size: 24px;
+    }
+    
+    .city-card-container {
+      gap: 70px; /* Больше отступ между карточками для иконок */
+    }
+  }
